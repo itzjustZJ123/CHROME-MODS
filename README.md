@@ -12,13 +12,11 @@ Edge: Click the three dots (...) > star icon.
 
 Step 3: Edit the Bookmark
 Open your bookmarks manager:
-
 Chrome: Press Ctrl+Shift+O (or Cmd+Shift+O on Mac).
 Firefox: Press Ctrl+Shift+B (or Cmd+Shift+B on Mac).
 Safari: Bookmarks > Edit Bookmarks.
 Edge: Three dots (...) > Favorites > Manage favorites.
 Locate the bookmark you just added.
-
 Edit it:
 Right-click the bookmark > Edit.
 Change the bookmark's name to something you'll remember.
