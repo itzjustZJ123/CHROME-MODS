@@ -43,9 +43,20 @@
       }
     },
     {
-      name: 'Flip Images 180',
+      name: 'Spin Images',
       action: function () {
-        javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('img')).map(function(el){el.style[prefix + 'transform'] = 'rotate(180deg)';});});}())
+        javascript:(function() {
+  var images = document.querySelectorAll('img');
+  images.forEach(function(image) {
+    image.style.transition = 'transform 2s linear infinite';
+    image.style.animation = 'spin 2s linear infinite';
+  });
+
+  var styles = document.createElement('style');
+  styles.innerHTML = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+  document.head.appendChild(styles);
+})();
+
       }
     },
     {
