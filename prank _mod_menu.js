@@ -57,7 +57,7 @@
     {
       name: 'YOU JUST GOT COCONUT MALLED',
       action: function () {
-        javascript:(function() {  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);  var replacementImageUrl = 'https://raw.githubusercontent.com/itzjustZJ123/GPortal/main/images/donkey.jpeg';  while (walker.nextNode()) {    var node = walker.currentNode;    node.textContent = "you just got coconut malled!";  }  var images = document.getElementsByTagName('img');  for (var i = 0; i < images.length; i++) {    images[i].src = replacementImageUrl;  }})();
+        javascript:(function() {  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);  var replacementImageUrl = 'https://raw.githubusercontent.com/itzjustZJ123/GPortal/main/images/donkey.jpeg';  while (walker.nextNode()) {    var node = walker.currentNode;    node.textContent = "You just got coconut malled!";  }  var images = document.getElementsByTagName('img');  for (var i = 0; i < images.length; i++) {    images[i].src = replacementImageUrl;  }})();
       }
     }
   ];
