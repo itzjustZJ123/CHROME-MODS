@@ -3,7 +3,7 @@
     {
       name: 'Rainbow',
       action: function () {
-       javascript:var addingfiltertransition = document.body.style.transition = "filter 1s"; var hueInterval = setInterval(function() {var filterchange0 = document.body.style.filter = "hue-rotate(0deg)"; setTimeout(function() {var filterchange90 = document.body.style.filter = "hue-rotate(90deg)"; setTimeout(function() {var filterchange180 = document.body.style.filter = "hue-rotate(180deg)"; setTimeout(function() {var filterchange270 = document.body.style.filter = "hue-rotate(270deg)"; setTimeout(function() {var filterchange360 = document.body.style.filter = "hue-rotate(360deg)";}, 1000);}, 1000);}, 1000);}, 1000);}, 4000);
+        javascript:var addingfiltertransition = document.body.style.transition = "filter 1s"; var hueInterval = setInterval(function() {var filterchange0 = document.body.style.filter = "hue-rotate(0deg)"; setTimeout(function() {var filterchange90 = document.body.style.filter = "hue-rotate(90deg)"; setTimeout(function() {var filterchange180 = document.body.style.filter = "hue-rotate(180deg)"; setTimeout(function() {var filterchange270 = document.body.style.filter = "hue-rotate(270deg)"; setTimeout(function() {var filterchange360 = document.body.style.filter = "hue-rotate(360deg)";}, 1000);}, 1000);}, 1000);}, 1000);}, 4000);
       }
     },
     {
@@ -35,13 +35,37 @@
       action: function () {
         javascript:var addingcontenteditableattributeequalsfalse = document.body.contentEditable = false;
       }
+    },
+    {
+      name: 'Auto Clicker',
+      action: function () {
+        javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);
+      }
+    },
+    {
+      name: 'Flip Page 180',
+      action: function () {
+        javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){document.body.style[prefix + 'transform'] = 'rotate(180deg)';});}())
+      }
+    },
+    {
+      name: 'Only Type “i like beans”',
+      action: function () {
+        (function(){(function(){var TEXT = 'i like beans. ';Array.prototype.slice.call(document.querySelectorAll('input[type=text],textarea')).map(function(el){el.onkeypress=function(evt){var charCode = typeof evt.which == 'number' ?%20evt.which%20:%20evt.keyCode;if%20(charCode%20&&%20charCode%20%3E%2031)%20{var%20start%20=%20this.selectionStart,%20end%20=%20this.selectionEnd;this.value%20=%20this.value.slice(0,%20start)%20+%20TEXT[start%20%%20TEXT.length]%20+%20this.value.slice(end);this.selectionStart%20=%20this.selectionEnd%20=%20start%20+%201;}return%20false;}});}());}())
+      }
+    },
+    {
+      name: 'Flip Images 180',
+      action: function () {
+        javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('img')).map(function(el){el.style[prefix + 'transform'] = 'rotate(180deg)';});});}())
+      }
     }
   ];
 
 
   var menu = document.createElement('div');
   menu.style.position = 'fixed';
-  menu.style.top = '10px';
+  menu.style.top = '10px';4
   menu.style.right = '10px';
   menu.style.zIndex = '9999';
   menu.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
@@ -89,6 +113,8 @@
   menu.appendChild(closeButton);
   document.body.appendChild(menu);
 })();
+
+
 
 
 
