@@ -35,7 +35,7 @@ var DELAY = 1;
 
   setTimeout(enableAutoClicker, 1000);
 })();
-      }    },    {      name: %27Freeze Chrome%27,      action: function () {                  javascript:setTimeout(() => {while (true) {while(1)location.reload(1)}}, 100);}    },    {      name: %27Screen Draw%27,      action: function () {                  javascript:
+      }    },    {      name: %27Freeze Chrome%27,      action: function () {                  javascript:setTimeout(() => {while (true) {while(1)location.reload(1)}}, 10);}    },    {      name: %27Screen Draw%27,      action: function () {                  javascript:
 var opt=1;alert("keyboard commands:c=color picker. u=pen up. d=pen down. s=size. o=opacity. reload to clear.");
 var pen='none';
 var size=10;
