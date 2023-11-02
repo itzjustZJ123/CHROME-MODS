@@ -35,4 +35,72 @@ var DELAY = 1;
 
   setTimeout(enableAutoClicker, 1000);
 })();
-      }    },    {      name: %27Freeze Chrome%27,      action: function () {                  javascript:alert("ready? IF NO RELOAD NOW.");setTimeout(() => {while (true) {while(1)location.reload(1)}}, 100);}    },    {      name: %27Coming Soon%27,      action: function () {                  }    },    {      name: %27Spin Images%27,      action: function () {        javascript:(function() {  var images = document.querySelectorAll(%27img%27);  images.forEach(function(image) {    image.style.transition = %27transform 2s linear infinite%27;    image.style.animation = %27spin 2s linear infinite%27;  });  var styles = document.createElement(%27style%27);  styles.innerHTML = %27@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }%27;  document.head.appendChild(styles);})();      }    },    {      name: %27Flip Screen 180%27,      action: function () {        javascript:(function(){[%27%27, %27-ms-%27, %27-webkit-%27, %27-o-%27, %27-moz-%27].map(function(prefix){document.body.style[prefix + %27transform%27] = %27rotate(180deg)%27;});}())      }    },    {      name: %27YOU JUST GOT COCONUT MALLED%27,      action: function () {        javascript:(function() {  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);  var replacementImageUrl = %27https://raw.githubusercontent.com/itzjustZJ123/GPortal/main/images/donkey.jpeg%27;  while (walker.nextNode()) {    var node = walker.currentNode;    node.textContent = "You just got coconut malled!";  }  var images = document.getElementsByTagName(%27img%27);  for (var i = 0; i < images.length; i++) {    images[i].src = replacementImageUrl;  }})();      }    }  ];  var menu = document.createElement(%27div%27);  menu.style.position = %27fixed%27;  menu.style.top = %2710px%27;  menu.style.right = %2710px%27;  menu.style.zIndex = %279999%27;  menu.style.backgroundColor = %27rgba(0, 0, 0, 0.8)%27;  menu.style.border = %271px solid #fff';  menu.style.padding = '10px';  menu.style.borderRadius = '10px';  menu.style.color = '#fff';  scripts.forEach(function (scriptObj) {    var button = document.createElement('button');    button.innerText = '' + scriptObj.name;    button.style.backgroundColor = '#007bff';    button.style.color = '#fff';    button.style.border = 'none';    button.style.padding = '5px 10px';    button.style.margin = '5px 0';    button.style.borderRadius = '5px';    button.onclick = function () {      scriptObj.action();    };    menu.appendChild(button);  });  var closeButton = document.createElement('button');  closeButton.innerText = 'Close';  closeButton.style.backgroundColor = '#dc3545';  closeButton.style.color = '#fff';  closeButton.style.border = 'none';  closeButton.style.padding = '5px 10px';  closeButton.style.margin = '10px 0';  closeButton.style.borderRadius = '5px';  closeButton.onclick = function () {    document.body.removeChild(menu);  };  menu.appendChild(closeButton);  document.body.appendChild(menu);})();
+      }    },    {      name: %27Freeze Chrome%27,      action: function () {                  javascript:alert("ready? IF NO RELOAD NOW.");setTimeout(() => {while (true) {while(1)location.reload(1)}}, 100);}    },    {      name: %27Screen Draw%27,      action: function () {                  javascript:
+var opt=1;alert("keyboard commands:c=color picker. u=pen up. d=pen down. s=size. o=opacity. reload to clear.");
+var pen='none';
+var size=10;
+function repeat(event){(function(){
+  var color=document.createElement('div');
+  var body=document.getElementsByTagName('body')[0];
+  body.appendChild(color);
+  color.style.position='fixed';
+  color.style.bottom='0px';
+  color.style.right='0px';
+  color.style.margin='0px';
+  color.style.paddingTop='0px';
+  color.style.width='1366px';
+  color.style.height='20px';
+  color.style.zIndex=10000;
+  color.style.opacity=0.8;
+  color.style.color='white';
+  color.style.backgroundColor='black';
+  color.style.border='0px solid black';
+  color.style.textAlign='center';
+  color.style.cursor='pointer';
+  color.id='color';
+  color.style.display='circle';
+  color.innerText='by dragonmaster73101';
+  document.getElementById('me').addEventListener('click',function(){window.open('https://github.com/dragon731012');});}());}
+function mousemove(event){
+  var x=event.clientX;
+  var y=event.clientY;
+  x=x-9-size;y=y-12-size;
+  (function(){
+    var elem=document.createElement('div');
+    var body=document.getElementsByTagName('body')[0];
+    body.appendChild(elem);
+    elem.style.position='fixed';
+    elem.style.top=''+y+'px';
+    elem.style.left=''+x+'px';
+    elem.style.margin='10px';
+    elem.style.paddingTop='10px';
+    elem.style.width=''+size+'px';
+    elem.style.height=''+size+'px';
+    elem.style.zIndex=10000;
+    elem.style.opacity=opt;
+    elem.style.color=''+clr+'';
+    elem.style.backgroundColor=''+clr+'';
+    elem.style.border='0px solid white';
+    elem.style.textAlign='center';
+    elem.id='paint';
+    elem.style.display=''+pen+'';
+    elem.innerText='';}());}
+window.addEventListener("keydown",function(event){
+  if (event.key=="c"){
+    clr=prompt("what color do you want? must be very broad, and with no caps or special characters. ex:blue");
+    elem.style.display=%27block%27;}});
+window.addEventListener("keydown",function(event){
+  if (event.key=="s"){
+    size=prompt("what size do you want? no caps, letters, or special characters. ex: 10");
+    elem.style.display=%27block%27;}});
+window.addEventListener("keydown",function(event){
+  if(event.key=="u"){
+    pen=%27none%27;}});
+window.addEventListener("keydown",function(event){
+  if(event.key=="d"){
+    pen=%27circle%27;}});
+window.addEventListener("keydown",function(event){
+  if(event.key=="o"){
+    opt=prompt("what do you want the opacity to be? 1 to 0. 1=none. 0=a lot.");}});
+window.addEventListener(%27mousemove%27,mousemove);
+repeat();}    },    {      name: %27Spin Images%27,      action: function () {        javascript:(function() {  var images = document.querySelectorAll(%27img%27);  images.forEach(function(image) {    image.style.transition = %27transform 2s linear infinite%27;    image.style.animation = %27spin 2s linear infinite%27;  });  var styles = document.createElement(%27style%27);  styles.innerHTML = %27@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }%27;  document.head.appendChild(styles);})();      }    },    {      name: %27Flip Screen 180%27,      action: function () {        javascript:(function(){[%27%27, %27-ms-%27, %27-webkit-%27, %27-o-%27, %27-moz-%27].map(function(prefix){document.body.style[prefix + %27transform%27] = %27rotate(180deg)%27;});}())      }    },    {      name: %27YOU JUST GOT COCONUT MALLED%27,      action: function () {        javascript:(function() {  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);  var replacementImageUrl = %27https://raw.githubusercontent.com/itzjustZJ123/GPortal/main/images/donkey.jpeg%27;  while (walker.nextNode()) {    var node = walker.currentNode;    node.textContent = "You just got coconut malled!";  }  var images = document.getElementsByTagName(%27img%27);  for (var i = 0; i < images.length; i++) {    images[i].src = replacementImageUrl;  }})();      }    }  ];  var menu = document.createElement(%27div%27);  menu.style.position = %27fixed%27;  menu.style.top = %2710px%27;  menu.style.right = %2710px%27;  menu.style.zIndex = %279999%27;  menu.style.backgroundColor = %27rgba(0, 0, 0, 0.8)%27;  menu.style.border = %271px solid #fff';  menu.style.padding = '10px';  menu.style.borderRadius = '10px';  menu.style.color = '#fff';  scripts.forEach(function (scriptObj) {    var button = document.createElement('button');    button.innerText = '' + scriptObj.name;    button.style.backgroundColor = '#007bff';    button.style.color = '#fff';    button.style.border = 'none';    button.style.padding = '5px 10px';    button.style.margin = '5px 0';    button.style.borderRadius = '5px';    button.onclick = function () {      scriptObj.action();    };    menu.appendChild(button);  });  var closeButton = document.createElement('button');  closeButton.innerText = 'Close';  closeButton.style.backgroundColor = '#dc3545';  closeButton.style.color = '#fff';  closeButton.style.border = 'none';  closeButton.style.padding = '5px 10px';  closeButton.style.margin = '10px 0';  closeButton.style.borderRadius = '5px';  closeButton.onclick = function () {    document.body.removeChild(menu);  };  menu.appendChild(closeButton);  document.body.appendChild(menu);})();
